@@ -1,0 +1,100 @@
+28. Debugging and Profiling
+***************************
+
+These libraries help you with Python development: the debugger enables
+you to step through code, analyze stack frames and set breakpoints
+etc., and the profilers run code and give you a detailed breakdown of
+execution times, allowing you to identify bottlenecks in your
+programs.
+
+* 28.1. "bdb" — Debugger framework
+
+* 28.2. "faulthandler" — Dump the Python traceback
+
+  * 28.2.1. Dumping the traceback
+
+  * 28.2.2. Fault handler state
+
+  * 28.2.3. Dumping the tracebacks after a timeout
+
+  * 28.2.4. Dumping the traceback on a user signal
+
+  * 28.2.5. Issue with file descriptors
+
+  * 28.2.6. Example
+
+* 28.3. "pdb" — The Python Debugger
+
+  * 28.3.1. Debugger Commands
+
+* 28.4. The Python Profilers
+
+  * 28.4.1. Introduction to the profilers
+
+  * 28.4.2. Instant User’s Manual
+
+  * 28.4.3. "profile" and "cProfile" Module Reference
+
+  * 28.4.4. The "Stats" Class
+
+  * 28.4.5. What Is Deterministic Profiling?
+
+  * 28.4.6. Limitations
+
+  * 28.4.7. Calibration
+
+  * 28.4.8. Using a custom timer
+
+* 28.5. "timeit" — Measure execution time of small code snippets
+
+  * 28.5.1. Basic Examples
+
+  * 28.5.2. Python Interface
+
+  * 28.5.3. Command-Line Interface
+
+  * 28.5.4. Examples
+
+* 28.6. "trace" — Trace or track Python statement execution
+
+  * 28.6.1. Command-Line Usage
+
+    * 28.6.1.1. Main options
+
+    * 28.6.1.2. Modifiers
+
+    * 28.6.1.3. Filters
+
+  * 28.6.2. Programmatic Interface
+
+* 28.7. "tracemalloc" — Trace memory allocations
+
+  * 28.7.1. Examples
+
+    * 28.7.1.1. Display the top 10
+
+    * 28.7.1.2. Compute differences
+
+    * 28.7.1.3. Get the traceback of a memory block
+
+    * 28.7.1.4. Pretty top
+
+  * 28.7.2. API
+
+    * 28.7.2.1. Functions
+
+    * 28.7.2.2. DomainFilter
+
+    * 28.7.2.3. Filter
+
+    * 28.7.2.4. Frame
+
+    * 28.7.2.5. Snapshot
+
+    * 28.7.2.6. Statistic
+
+    * 28.7.2.7. StatisticDiff
+
+    * 28.7.2.8. Trace
+
+    * 28.7.2.9. Traceback

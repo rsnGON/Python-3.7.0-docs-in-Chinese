@@ -1,0 +1,228 @@
+26. Graphical User Interfaces with Tk
+*************************************
+
+Tk/Tcl has long been an integral part of Python.  It provides a robust
+and platform independent windowing toolkit, that is available to
+Python programmers using the "tkinter" package, and its extension, the
+"tkinter.tix" and the "tkinter.ttk" modules.
+
+The "tkinter" package is a thin object-oriented layer on top of
+Tcl/Tk. To use "tkinter", you don’t need to write Tcl code, but you
+will need to consult the Tk documentation, and occasionally the Tcl
+documentation. "tkinter" is a set of wrappers that implement the Tk
+widgets as Python classes.  In addition, the internal module
+"_tkinter" provides a threadsafe mechanism which allows Python and Tcl
+to interact.
+
+"tkinter"’s chief virtues are that it is fast, and that it usually
+comes bundled with Python. Although its standard documentation is
+weak, good material is available, which includes: references,
+tutorials, a book and others. "tkinter" is also famous for having an
+outdated look and feel, which has been vastly improved in Tk 8.5.
+Nevertheless, there are many other GUI libraries that you could be
+interested in. For more information about alternatives, see the Other
+Graphical User Interface Packages section.
+
+* 26.1. "tkinter" — Python interface to Tcl/Tk
+
+  * 26.1.1. Tkinter Modules
+
+  * 26.1.2. Tkinter Life Preserver
+
+    * 26.1.2.1. How To Use This Section
+
+    * 26.1.2.2. A Simple Hello World Program
+
+  * 26.1.3. A (Very) Quick Look at Tcl/Tk
+
+  * 26.1.4. Mapping Basic Tk into Tkinter
+
+  * 26.1.5. How Tk and Tkinter are Related
+
+  * 26.1.6. Handy Reference
+
+    * 26.1.6.1. Setting Options
+
+    * 26.1.6.2. The Packer
+
+    * 26.1.6.3. Packer Options
+
+    * 26.1.6.4. Coupling Widget Variables
+
+    * 26.1.6.5. The Window Manager
+
+    * 26.1.6.6. Tk Option Data Types
+
+    * 26.1.6.7. Bindings and Events
+
+    * 26.1.6.8. The index Parameter
+
+    * 26.1.6.9. Images
+
+  * 26.1.7. File Handlers
+
+* 26.2. "tkinter.ttk" — Tk themed widgets
+
+  * 26.2.1. Using Ttk
+
+  * 26.2.2. Ttk Widgets
+
+  * 26.2.3. Widget
+
+    * 26.2.3.1. Standard Options
+
+    * 26.2.3.2. Scrollable Widget Options
+
+    * 26.2.3.3. Label Options
+
+    * 26.2.3.4. Compatibility Options
+
+    * 26.2.3.5. Widget States
+
+    * 26.2.3.6. ttk.Widget
+
+  * 26.2.4. Combobox
+
+    * 26.2.4.1. Options
+
+    * 26.2.4.2. Virtual events
+
+    * 26.2.4.3. ttk.Combobox
+
+  * 26.2.5. Spinbox
+
+    * 26.2.5.1. Options
+
+    * 26.2.5.2. Virtual events
+
+    * 26.2.5.3. ttk.Spinbox
+
+  * 26.2.6. Notebook
+
+    * 26.2.6.1. Options
+
+    * 26.2.6.2. Tab Options
+
+    * 26.2.6.3. Tab Identifiers
+
+    * 26.2.6.4. Virtual Events
+
+    * 26.2.6.5. ttk.Notebook
+
+  * 26.2.7. Progressbar
+
+    * 26.2.7.1. Options
+
+    * 26.2.7.2. ttk.Progressbar
+
+  * 26.2.8. Separator
+
+    * 26.2.8.1. Options
+
+  * 26.2.9. Sizegrip
+
+    * 26.2.9.1. Platform-specific notes
+
+    * 26.2.9.2. Bugs
+
+  * 26.2.10. Treeview
+
+    * 26.2.10.1. Options
+
+    * 26.2.10.2. Item Options
+
+    * 26.2.10.3. Tag Options
+
+    * 26.2.10.4. Column Identifiers
+
+    * 26.2.10.5. Virtual Events
+
+    * 26.2.10.6. ttk.Treeview
+
+  * 26.2.11. Ttk Styling
+
+    * 26.2.11.1. Layouts
+
+* 26.3. "tkinter.tix" — Extension widgets for Tk
+
+  * 26.3.1. Using Tix
+
+  * 26.3.2. Tix Widgets
+
+    * 26.3.2.1. Basic Widgets
+
+    * 26.3.2.2. File Selectors
+
+    * 26.3.2.3. Hierarchical ListBox
+
+    * 26.3.2.4. Tabular ListBox
+
+    * 26.3.2.5. Manager Widgets
+
+    * 26.3.2.6. Image Types
+
+    * 26.3.2.7. Miscellaneous Widgets
+
+    * 26.3.2.8. Form Geometry Manager
+
+  * 26.3.3. Tix Commands
+
+* 26.4. "tkinter.scrolledtext" — Scrolled Text Widget
+
+* 26.5. IDLE
+
+  * 26.5.1. Menus
+
+    * 26.5.1.1. File menu (Shell and Editor)
+
+    * 26.5.1.2. Edit menu (Shell and Editor)
+
+    * 26.5.1.3. Format menu (Editor window only)
+
+    * 26.5.1.4. Run menu (Editor window only)
+
+    * 26.5.1.5. Shell menu (Shell window only)
+
+    * 26.5.1.6. Debug menu (Shell window only)
+
+    * 26.5.1.7. Options menu (Shell and Editor)
+
+    * 26.5.1.8. Window menu (Shell and Editor)
+
+    * 26.5.1.9. Help menu (Shell and Editor)
+
+    * 26.5.1.10. Context Menus
+
+  * 26.5.2. Editing and navigation
+
+    * 26.5.2.1. Automatic indentation
+
+    * 26.5.2.2. Completions
+
+    * 26.5.2.3. Calltips
+
+    * 26.5.2.4. Python Shell window
+
+    * 26.5.2.5. Text colors
+
+  * 26.5.3. Startup and code execution
+
+    * 26.5.3.1. Command line usage
+
+    * 26.5.3.2. Startup failure
+
+    * 26.5.3.3. IDLE-console differences
+
+    * 26.5.3.4. Developing tkinter applications
+
+    * 26.5.3.5. Running without a subprocess
+
+  * 26.5.4. Help and preferences
+
+    * 26.5.4.1. Additional help sources
+
+    * 26.5.4.2. Setting preferences
+
+    * 26.5.4.3. Extensions
+
+* 26.6. Other Graphical User Interface Packages

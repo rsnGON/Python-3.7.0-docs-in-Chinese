@@ -1,0 +1,48 @@
+32. Importing Modules
+*********************
+
+The modules described in this chapter provide new ways to import other
+Python modules and hooks for customizing the import process.
+
+The full list of modules described in this chapter is:
+
+* 32.1. "zipimport" — Import modules from Zip archives
+
+  * 32.1.1. zipimporter Objects
+
+  * 32.1.2. Examples
+
+* 32.2. "pkgutil" — Package extension utility
+
+* 32.3. "modulefinder" — Find modules used by a script
+
+  * 32.3.1. Example usage of "ModuleFinder"
+
+* 32.4. "runpy" — Locating and executing Python modules
+
+* 32.5. "importlib" — The implementation of "import"
+
+  * 32.5.1. Introduction
+
+  * 32.5.2. Functions
+
+  * 32.5.3. "importlib.abc" – Abstract base classes related to
+    import
+
+  * 32.5.4. "importlib.resources" – Resources
+
+  * 32.5.5. "importlib.machinery" – Importers and path hooks
+
+  * 32.5.6. "importlib.util" – Utility code for importers
+
+  * 32.5.7. Examples
+
+    * 32.5.7.1. Importing programmatically
+
+    * 32.5.7.2. Checking if a module can be imported
+
+    * 32.5.7.3. Importing a source file directly
+
+    * 32.5.7.4. Setting up an importer
+
+    * 32.5.7.5. Approximating "importlib.import_module()"

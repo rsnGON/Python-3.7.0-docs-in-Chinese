@@ -1,0 +1,119 @@
+20. Internet Data Handling
+**************************
+
+This chapter describes modules which support handling data formats
+commonly used on the Internet.
+
+* 20.1. "email" — An email and MIME handling package
+
+  * 20.1.1. "email.message": Representing an email message
+
+  * 20.1.2. "email.parser": Parsing email messages
+
+    * 20.1.2.1. FeedParser API
+
+    * 20.1.2.2. Parser API
+
+    * 20.1.2.3. Additional notes
+
+  * 20.1.3. "email.generator": Generating MIME documents
+
+  * 20.1.4. "email.policy": Policy Objects
+
+  * 20.1.5. "email.errors": Exception and Defect classes
+
+  * 20.1.6. "email.headerregistry": Custom Header Objects
+
+  * 20.1.7. "email.contentmanager": Managing MIME Content
+
+    * 20.1.7.1. Content Manager Instances
+
+  * 20.1.8. "email": Examples
+
+  * 20.1.9. "email.message.Message": Representing an email message
+    using the "compat32" API
+
+  * 20.1.10. "email.mime": Creating email and MIME objects from
+    scratch
+
+  * 20.1.11. "email.header": Internationalized headers
+
+  * 20.1.12. "email.charset": Representing character sets
+
+  * 20.1.13. "email.encoders": Encoders
+
+  * 20.1.14. "email.utils": Miscellaneous utilities
+
+  * 20.1.15. "email.iterators": Iterators
+
+* 20.2. "json" — JSON encoder and decoder
+
+  * 20.2.1. Basic Usage
+
+  * 20.2.2. Encoders and Decoders
+
+  * 20.2.3. Exceptions
+
+  * 20.2.4. Standard Compliance and Interoperability
+
+    * 20.2.4.1. Character Encodings
+
+    * 20.2.4.2. Infinite and NaN Number Values
+
+    * 20.2.4.3. Repeated Names Within an Object
+
+    * 20.2.4.4. Top-level Non-Object, Non-Array Values
+
+    * 20.2.4.5. Implementation Limitations
+
+  * 20.2.5. Command Line Interface
+
+    * 20.2.5.1. Command line options
+
+* 20.3. "mailcap" — Mailcap file handling
+
+* 20.4. "mailbox" — Manipulate mailboxes in various formats
+
+  * 20.4.1. "Mailbox" objects
+
+    * 20.4.1.1. "Maildir"
+
+    * 20.4.1.2. "mbox"
+
+    * 20.4.1.3. "MH"
+
+    * 20.4.1.4. "Babyl"
+
+    * 20.4.1.5. "MMDF"
+
+  * 20.4.2. "Message" objects
+
+    * 20.4.2.1. "MaildirMessage"
+
+    * 20.4.2.2. "mboxMessage"
+
+    * 20.4.2.3. "MHMessage"
+
+    * 20.4.2.4. "BabylMessage"
+
+    * 20.4.2.5. "MMDFMessage"
+
+  * 20.4.3. Exceptions
+
+  * 20.4.4. Examples
+
+* 20.5. "mimetypes" — Map filenames to MIME types
+
+  * 20.5.1. MimeTypes Objects
+
+* 20.6. "base64" — Base16, Base32, Base64, Base85 Data Encodings
+
+* 20.7. "binhex" — Encode and decode binhex4 files
+
+  * 20.7.1. Notes
+
+* 20.8. "binascii" — Convert between binary and ASCII
+
+* 20.9. "quopri" — Encode and decode MIME quoted-printable data
+
+* 20.10. "uu" — Encode and decode uuencode files

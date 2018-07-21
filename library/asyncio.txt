@@ -1,0 +1,282 @@
+19.5. "asyncio" — Asynchronous I/O, event loop, coroutines and tasks
+********************************************************************
+
+New in version 3.4.
+
+**Source code:** Lib/asyncio/
+
+======================================================================
+
+This module provides infrastructure for writing single-threaded
+concurrent code using coroutines, multiplexing I/O access over sockets
+and other resources, running network clients and servers, and other
+related primitives. Here is a more detailed list of the package
+contents:
+
+* a pluggable event loop with various system-specific
+  implementations;
+
+* transport and protocol abstractions (similar to those in Twisted);
+
+* concrete support for TCP, UDP, SSL, subprocess pipes, delayed
+  calls, and others (some may be system-dependent);
+
+* a "Future" class that mimics the one in the "concurrent.futures"
+  module, but adapted for use with the event loop;
+
+* coroutines and tasks based on "yield from" (**PEP 380**), to help
+  write concurrent code in a sequential fashion;
+
+* cancellation support for "Future"s and coroutines;
+
+* synchronization primitives for use between coroutines in a single
+  thread, mimicking those in the "threading" module;
+
+* an interface for passing work off to a threadpool, for times when
+  you absolutely, positively have to use a library that makes blocking
+  I/O calls.
+
+Asynchronous programming is more complex than classical “sequential”
+programming: see the Develop with asyncio page which lists common
+traps and explains how to avoid them. Enable the debug mode during
+development to detect common issues.
+
+Table of contents:
+
+* 19.5.1. Base Event Loop
+
+  * 19.5.1.1. Run an event loop
+
+  * 19.5.1.2. Calls
+
+  * 19.5.1.3. Delayed calls
+
+  * 19.5.1.4. Futures
+
+  * 19.5.1.5. Tasks
+
+  * 19.5.1.6. Creating connections
+
+  * 19.5.1.7. Creating listening connections
+
+  * 19.5.1.8. File Transferring
+
+  * 19.5.1.9. TLS Upgrade
+
+  * 19.5.1.10. Watch file descriptors
+
+  * 19.5.1.11. Low-level socket operations
+
+  * 19.5.1.12. Resolve host name
+
+  * 19.5.1.13. Connect pipes
+
+  * 19.5.1.14. UNIX signals
+
+  * 19.5.1.15. Executor
+
+  * 19.5.1.16. Error Handling API
+
+  * 19.5.1.17. Debug mode
+
+  * 19.5.1.18. Server
+
+  * 19.5.1.19. Handle
+
+  * 19.5.1.20. SendfileNotAvailableError
+
+  * 19.5.1.21. Event loop examples
+
+    * 19.5.1.21.1. Hello World with call_soon()
+
+    * 19.5.1.21.2. Display the current date with call_later()
+
+    * 19.5.1.21.3. Watch a file descriptor for read events
+
+    * 19.5.1.21.4. Set signal handlers for SIGINT and SIGTERM
+
+* 19.5.2. Event loops
+
+  * 19.5.2.1. Event loop functions
+
+  * 19.5.2.2. Available event loops
+
+  * 19.5.2.3. Platform support
+
+    * 19.5.2.3.1. Windows
+
+    * 19.5.2.3.2. Mac OS X
+
+  * 19.5.2.4. Event loop policies and the default policy
+
+  * 19.5.2.5. Event loop policy interface
+
+  * 19.5.2.6. Access to the global loop policy
+
+  * 19.5.2.7. Customizing the event loop policy
+
+* 19.5.3. Tasks and coroutines
+
+  * 19.5.3.1. Coroutines
+
+    * 19.5.3.1.1. Example: Hello World coroutine
+
+    * 19.5.3.1.2. Example: Coroutine displaying the current date
+
+    * 19.5.3.1.3. Example: Chain coroutines
+
+  * 19.5.3.2. InvalidStateError
+
+  * 19.5.3.3. TimeoutError
+
+  * 19.5.3.4. Future
+
+    * 19.5.3.4.1. Example: Future with run_until_complete()
+
+    * 19.5.3.4.2. Example: Future with run_forever()
+
+  * 19.5.3.5. Task
+
+    * 19.5.3.5.1. Example: Parallel execution of tasks
+
+  * 19.5.3.6. Task functions
+
+* 19.5.4. Transports and protocols (callback based API)
+
+  * 19.5.4.1. Transports
+
+    * 19.5.4.1.1. BaseTransport
+
+    * 19.5.4.1.2. ReadTransport
+
+    * 19.5.4.1.3. WriteTransport
+
+    * 19.5.4.1.4. DatagramTransport
+
+    * 19.5.4.1.5. BaseSubprocessTransport
+
+  * 19.5.4.2. Protocols
+
+    * 19.5.4.2.1. Protocol classes
+
+    * 19.5.4.2.2. Connection callbacks
+
+    * 19.5.4.2.3. Streaming protocols
+
+    * 19.5.4.2.4. Streaming protocols with manual receive buffer
+      control
+
+    * 19.5.4.2.5. Datagram protocols
+
+    * 19.5.4.2.6. Flow control callbacks
+
+    * 19.5.4.2.7. Coroutines and protocols
+
+  * 19.5.4.3. Protocol examples
+
+    * 19.5.4.3.1. TCP echo client protocol
+
+    * 19.5.4.3.2. TCP echo server protocol
+
+    * 19.5.4.3.3. UDP echo client protocol
+
+    * 19.5.4.3.4. UDP echo server protocol
+
+    * 19.5.4.3.5. Register an open socket to wait for data using a
+      protocol
+
+* 19.5.5. Streams (coroutine based API)
+
+  * 19.5.5.1. Stream functions
+
+  * 19.5.5.2. StreamReader
+
+  * 19.5.5.3. StreamWriter
+
+  * 19.5.5.4. StreamReaderProtocol
+
+  * 19.5.5.5. IncompleteReadError
+
+  * 19.5.5.6. LimitOverrunError
+
+  * 19.5.5.7. Stream examples
+
+    * 19.5.5.7.1. TCP echo client using streams
+
+    * 19.5.5.7.2. TCP echo server using streams
+
+    * 19.5.5.7.3. Get HTTP headers
+
+    * 19.5.5.7.4. Register an open socket to wait for data using
+      streams
+
+* 19.5.6. Subprocess
+
+  * 19.5.6.1. Windows event loop
+
+  * 19.5.6.2. Create a subprocess: high-level API using Process
+
+  * 19.5.6.3. Create a subprocess: low-level API using
+    subprocess.Popen
+
+  * 19.5.6.4. Constants
+
+  * 19.5.6.5. Process
+
+  * 19.5.6.6. Subprocess and threads
+
+  * 19.5.6.7. Subprocess examples
+
+    * 19.5.6.7.1. Subprocess using transport and protocol
+
+    * 19.5.6.7.2. Subprocess using streams
+
+* 19.5.7. Synchronization primitives
+
+  * 19.5.7.1. Lock
+
+  * 19.5.7.2. Event
+
+  * 19.5.7.3. Condition
+
+  * 19.5.7.4. Semaphore
+
+  * 19.5.7.5. BoundedSemaphore
+
+  * 19.5.7.6. Using locks, conditions and semaphores in the "async
+    with" statement
+
+* 19.5.8. Queues
+
+  * 19.5.8.1. Queue
+
+  * 19.5.8.2. PriorityQueue
+
+  * 19.5.8.3. LifoQueue
+
+    * 19.5.8.3.1. Exceptions
+
+* 19.5.9. Develop with asyncio
+
+  * 19.5.9.1. Debug mode of asyncio
+
+  * 19.5.9.2. Cancellation
+
+  * 19.5.9.3. Concurrency and multithreading
+
+  * 19.5.9.4. Handle blocking functions correctly
+
+  * 19.5.9.5. Logging
+
+  * 19.5.9.6. Detect coroutine objects never scheduled
+
+  * 19.5.9.7. Detect exceptions never consumed
+
+  * 19.5.9.8. Chain coroutines correctly
+
+  * 19.5.9.9. Pending task destroyed
+
+  * 19.5.9.10. Close transports and event loops
+
+See also: The "asyncio" module was designed in **PEP 3156**. For a
+  motivational primer on transports and protocols, see **PEP 3153**.

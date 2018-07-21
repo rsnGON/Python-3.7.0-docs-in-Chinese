@@ -1,0 +1,58 @@
+36. Unix Specific Services
+**************************
+
+The modules described in this chapter provide interfaces to features
+that are unique to the Unix operating system, or in some cases to some
+or many variants of it.  Here’s an overview:
+
+* 36.1. "posix" — The most common POSIX system calls
+
+  * 36.1.1. Large File Support
+
+  * 36.1.2. Notable Module Contents
+
+* 36.2. "pwd" — The password database
+
+* 36.3. "spwd" — The shadow password database
+
+* 36.4. "grp" — The group database
+
+* 36.5. "crypt" — Function to check Unix passwords
+
+  * 36.5.1. Hashing Methods
+
+  * 36.5.2. Module Attributes
+
+  * 36.5.3. Module Functions
+
+  * 36.5.4. Examples
+
+* 36.6. "termios" — POSIX style tty control
+
+  * 36.6.1. Example
+
+* 36.7. "tty" — Terminal control functions
+
+* 36.8. "pty" — Pseudo-terminal utilities
+
+  * 36.8.1. Example
+
+* 36.9. "fcntl" — The "fcntl" and "ioctl" system calls
+
+* 36.10. "pipes" — Interface to shell pipelines
+
+  * 36.10.1. Template Objects
+
+* 36.11. "resource" — Resource usage information
+
+  * 36.11.1. Resource Limits
+
+  * 36.11.2. Resource Usage
+
+* 36.12. "nis" — Interface to Sun’s NIS (Yellow Pages)
+
+* 36.13. "syslog" — Unix syslog library routines
+
+  * 36.13.1. Examples
+
+    * 36.13.1.1. Simple example

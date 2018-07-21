@@ -1,0 +1,381 @@
+19. Interprocess Communication and Networking
+*********************************************
+
+The modules described in this chapter provide mechanisms for different
+processes to communicate.
+
+Some modules only work for two processes that are on the same machine,
+e.g. "signal" and "mmap".  Other modules support networking protocols
+that two or more processes can use to communicate across machines.
+
+The list of modules described in this chapter is:
+
+* 19.1. "socket" — Low-level networking interface
+
+  * 19.1.1. Socket families
+
+  * 19.1.2. Module contents
+
+    * 19.1.2.1. Exceptions
+
+    * 19.1.2.2. Constants
+
+    * 19.1.2.3. Functions
+
+      * 19.1.2.3.1. Creating sockets
+
+      * 19.1.2.3.2. Other functions
+
+  * 19.1.3. Socket Objects
+
+  * 19.1.4. Notes on socket timeouts
+
+    * 19.1.4.1. Timeouts and the "connect" method
+
+    * 19.1.4.2. Timeouts and the "accept" method
+
+  * 19.1.5. Example
+
+* 19.2. "ssl" — TLS/SSL wrapper for socket objects
+
+  * 19.2.1. Functions, Constants, and Exceptions
+
+    * 19.2.1.1. Socket creation
+
+    * 19.2.1.2. Context creation
+
+    * 19.2.1.3. Exceptions
+
+    * 19.2.1.4. Random generation
+
+    * 19.2.1.5. Certificate handling
+
+    * 19.2.1.6. Constants
+
+  * 19.2.2. SSL Sockets
+
+  * 19.2.3. SSL Contexts
+
+  * 19.2.4. Certificates
+
+    * 19.2.4.1. Certificate chains
+
+    * 19.2.4.2. CA certificates
+
+    * 19.2.4.3. Combined key and certificate
+
+    * 19.2.4.4. Self-signed certificates
+
+  * 19.2.5. Examples
+
+    * 19.2.5.1. Testing for SSL support
+
+    * 19.2.5.2. Client-side operation
+
+    * 19.2.5.3. Server-side operation
+
+  * 19.2.6. Notes on non-blocking sockets
+
+  * 19.2.7. Memory BIO Support
+
+  * 19.2.8. SSL session
+
+  * 19.2.9. Security considerations
+
+    * 19.2.9.1. Best defaults
+
+    * 19.2.9.2. Manual settings
+
+      * 19.2.9.2.1. Verifying certificates
+
+      * 19.2.9.2.2. Protocol versions
+
+      * 19.2.9.2.3. Cipher selection
+
+    * 19.2.9.3. Multi-processing
+
+  * 19.2.10. TLS 1.3
+
+  * 19.2.11. LibreSSL support
+
+* 19.3. "select" — Waiting for I/O completion
+
+  * 19.3.1. "/dev/poll" Polling Objects
+
+  * 19.3.2. Edge and Level Trigger Polling (epoll) Objects
+
+  * 19.3.3. Polling Objects
+
+  * 19.3.4. Kqueue Objects
+
+  * 19.3.5. Kevent Objects
+
+* 19.4. "selectors" — High-level I/O multiplexing
+
+  * 19.4.1. Introduction
+
+  * 19.4.2. Classes
+
+  * 19.4.3. Examples
+
+* 19.5. "asyncio" — Asynchronous I/O, event loop, coroutines and
+  tasks
+
+  * 19.5.1. Base Event Loop
+
+    * 19.5.1.1. Run an event loop
+
+    * 19.5.1.2. Calls
+
+    * 19.5.1.3. Delayed calls
+
+    * 19.5.1.4. Futures
+
+    * 19.5.1.5. Tasks
+
+    * 19.5.1.6. Creating connections
+
+    * 19.5.1.7. Creating listening connections
+
+    * 19.5.1.8. File Transferring
+
+    * 19.5.1.9. TLS Upgrade
+
+    * 19.5.1.10. Watch file descriptors
+
+    * 19.5.1.11. Low-level socket operations
+
+    * 19.5.1.12. Resolve host name
+
+    * 19.5.1.13. Connect pipes
+
+    * 19.5.1.14. UNIX signals
+
+    * 19.5.1.15. Executor
+
+    * 19.5.1.16. Error Handling API
+
+    * 19.5.1.17. Debug mode
+
+    * 19.5.1.18. Server
+
+    * 19.5.1.19. Handle
+
+    * 19.5.1.20. SendfileNotAvailableError
+
+    * 19.5.1.21. Event loop examples
+
+      * 19.5.1.21.1. Hello World with call_soon()
+
+      * 19.5.1.21.2. Display the current date with call_later()
+
+      * 19.5.1.21.3. Watch a file descriptor for read events
+
+      * 19.5.1.21.4. Set signal handlers for SIGINT and SIGTERM
+
+  * 19.5.2. Event loops
+
+    * 19.5.2.1. Event loop functions
+
+    * 19.5.2.2. Available event loops
+
+    * 19.5.2.3. Platform support
+
+      * 19.5.2.3.1. Windows
+
+      * 19.5.2.3.2. Mac OS X
+
+    * 19.5.2.4. Event loop policies and the default policy
+
+    * 19.5.2.5. Event loop policy interface
+
+    * 19.5.2.6. Access to the global loop policy
+
+    * 19.5.2.7. Customizing the event loop policy
+
+  * 19.5.3. Tasks and coroutines
+
+    * 19.5.3.1. Coroutines
+
+      * 19.5.3.1.1. Example: Hello World coroutine
+
+      * 19.5.3.1.2. Example: Coroutine displaying the current date
+
+      * 19.5.3.1.3. Example: Chain coroutines
+
+    * 19.5.3.2. InvalidStateError
+
+    * 19.5.3.3. TimeoutError
+
+    * 19.5.3.4. Future
+
+      * 19.5.3.4.1. Example: Future with run_until_complete()
+
+      * 19.5.3.4.2. Example: Future with run_forever()
+
+    * 19.5.3.5. Task
+
+      * 19.5.3.5.1. Example: Parallel execution of tasks
+
+    * 19.5.3.6. Task functions
+
+  * 19.5.4. Transports and protocols (callback based API)
+
+    * 19.5.4.1. Transports
+
+      * 19.5.4.1.1. BaseTransport
+
+      * 19.5.4.1.2. ReadTransport
+
+      * 19.5.4.1.3. WriteTransport
+
+      * 19.5.4.1.4. DatagramTransport
+
+      * 19.5.4.1.5. BaseSubprocessTransport
+
+    * 19.5.4.2. Protocols
+
+      * 19.5.4.2.1. Protocol classes
+
+      * 19.5.4.2.2. Connection callbacks
+
+      * 19.5.4.2.3. Streaming protocols
+
+      * 19.5.4.2.4. Streaming protocols with manual receive buffer
+        control
+
+      * 19.5.4.2.5. Datagram protocols
+
+      * 19.5.4.2.6. Flow control callbacks
+
+      * 19.5.4.2.7. Coroutines and protocols
+
+    * 19.5.4.3. Protocol examples
+
+      * 19.5.4.3.1. TCP echo client protocol
+
+      * 19.5.4.3.2. TCP echo server protocol
+
+      * 19.5.4.3.3. UDP echo client protocol
+
+      * 19.5.4.3.4. UDP echo server protocol
+
+      * 19.5.4.3.5. Register an open socket to wait for data using a
+        protocol
+
+  * 19.5.5. Streams (coroutine based API)
+
+    * 19.5.5.1. Stream functions
+
+    * 19.5.5.2. StreamReader
+
+    * 19.5.5.3. StreamWriter
+
+    * 19.5.5.4. StreamReaderProtocol
+
+    * 19.5.5.5. IncompleteReadError
+
+    * 19.5.5.6. LimitOverrunError
+
+    * 19.5.5.7. Stream examples
+
+      * 19.5.5.7.1. TCP echo client using streams
+
+      * 19.5.5.7.2. TCP echo server using streams
+
+      * 19.5.5.7.3. Get HTTP headers
+
+      * 19.5.5.7.4. Register an open socket to wait for data using
+        streams
+
+  * 19.5.6. Subprocess
+
+    * 19.5.6.1. Windows event loop
+
+    * 19.5.6.2. Create a subprocess: high-level API using Process
+
+    * 19.5.6.3. Create a subprocess: low-level API using
+      subprocess.Popen
+
+    * 19.5.6.4. Constants
+
+    * 19.5.6.5. Process
+
+    * 19.5.6.6. Subprocess and threads
+
+    * 19.5.6.7. Subprocess examples
+
+      * 19.5.6.7.1. Subprocess using transport and protocol
+
+      * 19.5.6.7.2. Subprocess using streams
+
+  * 19.5.7. Synchronization primitives
+
+    * 19.5.7.1. Lock
+
+    * 19.5.7.2. Event
+
+    * 19.5.7.3. Condition
+
+    * 19.5.7.4. Semaphore
+
+    * 19.5.7.5. BoundedSemaphore
+
+    * 19.5.7.6. Using locks, conditions and semaphores in the "async
+      with" statement
+
+  * 19.5.8. Queues
+
+    * 19.5.8.1. Queue
+
+    * 19.5.8.2. PriorityQueue
+
+    * 19.5.8.3. LifoQueue
+
+      * 19.5.8.3.1. Exceptions
+
+  * 19.5.9. Develop with asyncio
+
+    * 19.5.9.1. Debug mode of asyncio
+
+    * 19.5.9.2. Cancellation
+
+    * 19.5.9.3. Concurrency and multithreading
+
+    * 19.5.9.4. Handle blocking functions correctly
+
+    * 19.5.9.5. Logging
+
+    * 19.5.9.6. Detect coroutine objects never scheduled
+
+    * 19.5.9.7. Detect exceptions never consumed
+
+    * 19.5.9.8. Chain coroutines correctly
+
+    * 19.5.9.9. Pending task destroyed
+
+    * 19.5.9.10. Close transports and event loops
+
+* 19.6. "asyncore" — Asynchronous socket handler
+
+  * 19.6.1. asyncore Example basic HTTP client
+
+  * 19.6.2. asyncore Example basic echo server
+
+* 19.7. "asynchat" — Asynchronous socket command/response handler
+
+  * 19.7.1. asynchat Example
+
+* 19.8. "signal" — Set handlers for asynchronous events
+
+  * 19.8.1. General rules
+
+    * 19.8.1.1. Execution of Python signal handlers
+
+    * 19.8.1.2. Signals and threads
+
+  * 19.8.2. Module contents
+
+  * 19.8.3. Example
+
+* 19.9. "mmap" — Memory-mapped file support

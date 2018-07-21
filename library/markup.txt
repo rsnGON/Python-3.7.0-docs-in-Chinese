@@ -1,0 +1,160 @@
+21. Structured Markup Processing Tools
+**************************************
+
+Python supports a variety of modules to work with various forms of
+structured data markup.  This includes modules to work with the
+Standard Generalized Markup Language (SGML) and the Hypertext Markup
+Language (HTML), and several interfaces for working with the
+Extensible Markup Language (XML).
+
+* 21.1. "html" — HyperText Markup Language support
+
+* 21.2. "html.parser" — Simple HTML and XHTML parser
+
+  * 21.2.1. Example HTML Parser Application
+
+  * 21.2.2. "HTMLParser" Methods
+
+  * 21.2.3. Examples
+
+* 21.3. "html.entities" — Definitions of HTML general entities
+
+* 21.4. XML Processing Modules
+
+  * 21.4.1. XML vulnerabilities
+
+  * 21.4.2. The "defusedxml" and "defusedexpat" Packages
+
+* 21.5. "xml.etree.ElementTree" — The ElementTree XML API
+
+  * 21.5.1. Tutorial
+
+    * 21.5.1.1. XML tree and elements
+
+    * 21.5.1.2. Parsing XML
+
+    * 21.5.1.3. Pull API for non-blocking parsing
+
+    * 21.5.1.4. Finding interesting elements
+
+    * 21.5.1.5. Modifying an XML File
+
+    * 21.5.1.6. Building XML documents
+
+    * 21.5.1.7. Parsing XML with Namespaces
+
+    * 21.5.1.8. Additional resources
+
+  * 21.5.2. XPath support
+
+    * 21.5.2.1. Example
+
+    * 21.5.2.2. Supported XPath syntax
+
+  * 21.5.3. Reference
+
+    * 21.5.3.1. Functions
+
+    * 21.5.3.2. Element Objects
+
+    * 21.5.3.3. ElementTree Objects
+
+    * 21.5.3.4. QName Objects
+
+    * 21.5.3.5. TreeBuilder Objects
+
+    * 21.5.3.6. XMLParser Objects
+
+    * 21.5.3.7. XMLPullParser Objects
+
+    * 21.5.3.8. Exceptions
+
+* 21.6. "xml.dom" — The Document Object Model API
+
+  * 21.6.1. Module Contents
+
+  * 21.6.2. Objects in the DOM
+
+    * 21.6.2.1. DOMImplementation Objects
+
+    * 21.6.2.2. Node Objects
+
+    * 21.6.2.3. NodeList Objects
+
+    * 21.6.2.4. DocumentType Objects
+
+    * 21.6.2.5. Document Objects
+
+    * 21.6.2.6. Element Objects
+
+    * 21.6.2.7. Attr Objects
+
+    * 21.6.2.8. NamedNodeMap Objects
+
+    * 21.6.2.9. Comment Objects
+
+    * 21.6.2.10. Text and CDATASection Objects
+
+    * 21.6.2.11. ProcessingInstruction Objects
+
+    * 21.6.2.12. Exceptions
+
+  * 21.6.3. Conformance
+
+    * 21.6.3.1. Type Mapping
+
+    * 21.6.3.2. Accessor Methods
+
+* 21.7. "xml.dom.minidom" — Minimal DOM implementation
+
+  * 21.7.1. DOM Objects
+
+  * 21.7.2. DOM Example
+
+  * 21.7.3. minidom and the DOM standard
+
+* 21.8. "xml.dom.pulldom" — Support for building partial DOM trees
+
+  * 21.8.1. DOMEventStream Objects
+
+* 21.9. "xml.sax" — Support for SAX2 parsers
+
+  * 21.9.1. SAXException Objects
+
+* 21.10. "xml.sax.handler" — Base classes for SAX handlers
+
+  * 21.10.1. ContentHandler Objects
+
+  * 21.10.2. DTDHandler Objects
+
+  * 21.10.3. EntityResolver Objects
+
+  * 21.10.4. ErrorHandler Objects
+
+* 21.11. "xml.sax.saxutils" — SAX Utilities
+
+* 21.12. "xml.sax.xmlreader" — Interface for XML parsers
+
+  * 21.12.1. XMLReader Objects
+
+  * 21.12.2. IncrementalParser Objects
+
+  * 21.12.3. Locator Objects
+
+  * 21.12.4. InputSource Objects
+
+  * 21.12.5. The "Attributes" Interface
+
+  * 21.12.6. The "AttributesNS" Interface
+
+* 21.13. "xml.parsers.expat" — Fast XML parsing using Expat
+
+  * 21.13.1. XMLParser Objects
+
+  * 21.13.2. ExpatError Exceptions
+
+  * 21.13.3. Example
+
+  * 21.13.4. Content Model Descriptions
+
+  * 21.13.5. Expat error constants

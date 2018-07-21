@@ -1,0 +1,53 @@
+35. MS Windows Specific Services
+********************************
+
+This chapter describes modules that are only available on MS Windows
+platforms.
+
+* 35.1. "msilib" — Read and write Microsoft Installer files
+
+  * 35.1.1. Database Objects
+
+  * 35.1.2. View Objects
+
+  * 35.1.3. Summary Information Objects
+
+  * 35.1.4. Record Objects
+
+  * 35.1.5. Errors
+
+  * 35.1.6. CAB Objects
+
+  * 35.1.7. Directory Objects
+
+  * 35.1.8. Features
+
+  * 35.1.9. GUI classes
+
+  * 35.1.10. Precomputed tables
+
+* 35.2. "msvcrt" — Useful routines from the MS VC++ runtime
+
+  * 35.2.1. File Operations
+
+  * 35.2.2. Console I/O
+
+  * 35.2.3. Other Functions
+
+* 35.3. "winreg" — Windows registry access
+
+  * 35.3.1. Functions
+
+  * 35.3.2. Constants
+
+    * 35.3.2.1. HKEY_* Constants
+
+    * 35.3.2.2. Access Rights
+
+      * 35.3.2.2.1. 64-bit Specific
+
+    * 35.3.2.3. Value Types
+
+  * 35.3.3. Registry Handle Objects
+
+* 35.4. "winsound" — Sound-playing interface for Windows
