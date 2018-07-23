@@ -106,7 +106,9 @@ C,  C++, or Java programs, for several reasons:
 * no variable or argument declarations are necessary.
 
 Python是*可扩展的*:如果你知道怎么用C语言编程,那很容易给解释器添加一个新的内建函数
-或者模块,
+或者模块,或者很容易用最快的速度执行关键的操作，或者很容易把Python程序链接到库，这些库
+可能只能对于二进制格式可用（比如一个厂商相关的图形库）.等你真正熟悉这一切了，你就可以
+将Python解释器集成进由C写成的程序，把Python解释器当做这个程序的扩展或命令行语言.
 
 Python is *extensible*: if you know how to program in C it is easy to
 add a new built-in function or module to the interpreter, either to
@@ -116,18 +118,24 @@ as a vendor-specific graphics library). Once you are really hooked,
 you can link the Python interpreter into an application written in C
 and use it as an extension or command language for that application.
 
-顺便,Python语言以BBC show“Monty Python’sFlying Circus”命名的.
+顺便,Python语言以BBC节目“Monty Python’s Flying Circus”命名的，与爬行动物没有关系.
+在本文档中对Monty Python短剧的引用，不但是允许的，而且是被鼓励的.
 
 By the way, the language is named after the BBC show “Monty Python’s
 Flying Circus” and has nothing to do with reptiles.  Making references
 to Monty Python skits in documentation is not only allowed, it is
 encouraged!
 
+现在你们对Python很兴奋了，你们想在更多细节上去练习它.因为去学习一门语言的最好方
+式是去使用它，所以本教程欢迎你去一边阅读一边用Python解释器去练习.
+
 Now that you are all excited about Python, you’ll want to examine it
 in some more detail.  Since the best way to learn a language is to use
 it, the tutorial invites you to play with the Python interpreter as
 you read.
 
+在下一章,讲解使用Python解释器的机械式操作.这是相当简单的知识,但是对于练习后面展示
+的例子很有必要.
 In the next chapter, the mechanics of using the interpreter are
 explained.  This is rather mundane information, but essential for
 trying out the examples shown later.
